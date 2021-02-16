@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace Itvdn_dotnet
+namespace String
 {
     class Program
     {
         static void Main(string[] args)
         {
-            
+            Console.WriteLine("Hello World!");
         }
     }
 }
