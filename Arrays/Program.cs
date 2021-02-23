@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Arrays
 {
@@ -14,13 +16,56 @@ namespace Arrays
 
 
         }
+    }
 
-        public static T[] AddElementToArray<T>(this T[] array, T item)
+    public static class ArraysTask
+    {
+        // Add Element ToArray with method CopyTo
+        public static T[] AddElementToArrayCopyTo<T>(this T[] array, T item)
         {
+            if (array == null)
+            {
+                return new[] { item };
+            }
+            T[] result = new T[array.Length + 1];
+            array.CopyTo(result, 0);
+            result[array.Length] = item;
             return result;
         }
 
-    }
+        // Add Element ToArray with Linq method Concat
+        public static T[] AddElementToArrayConcat<T>(this T[] array, T item)
+        {
+            if (array == null)
+            {
+                return new T[] { item };
+            }
+            return array.Concat(new T[] { item }).ToArray();
+        }
 
-    
+        // Add Element ToArray with methot Resize
+        public static T[] AddElementToArrayResize<T>(this T[] array, T item)
+        {
+            if(array == null)
+            {
+                return new T[] { item };
+            }
+            Array.Resize(ref array, array.Length + 1);
+            array[array.Length - 1] = item;
+
+            return array;
+        }
+
+        // Add Element ToArray with convert to List
+        public static T[] Append<T>(this T[] array, T item)
+        {
+            List<T> list = new List<T>(array);
+            list.Add(item);
+
+            return list.ToArray();
+        }
+
+
+
+    }
 }
