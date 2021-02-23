@@ -14,7 +14,65 @@ namespace Arrays
             int[] integerArray3 = new int[] { 0, 1, 2, 3, 4 };
             int[] integerArray4 = new int[5] { 0, 1, 2, 3, 4 };
 
+            // Sorting elements of array
+            Array.Sort(integerArray3);
 
+            // Reverse elements of array
+            Array.Reverse(integerArray4);
+
+            // Initialization of a two-dimensional array
+            int[,] integerArray5 = {
+                             { 1, 2 },
+                             { 3, 4 },
+                             { 5, 6 }
+                           };
+
+            // Initialization of a three-dimensional array
+            int[,,] integerArray6 = new int[3, 2, 3]
+           {
+                {
+                    { 1, 2, 3 },                   
+                    { 7, 8, 9 }
+                },
+                {
+                    { 1, 2, 3 },                   
+                    { 7, 8, 9 }
+                },
+                {
+                    { 1, 2, 3 },                  
+                    { 7, 8, 9 }
+                }
+           };
+            
+            for (int i = 0; i < integerArray6.GetLength(0); i++)
+                for (int j = 0; j < integerArray6.GetLength(1); j++)
+                    for (int k = 0; k < integerArray6.GetLength(2); k++)
+                        Console.Write($"{integerArray6[i, j, k]} ");
+
+
+            // Initialization of a jagged array v.1
+            byte[] array0 = new byte[] { 1, 2, 3 };
+            byte[] array1 = new byte[] { 1, 2, 3, 4, 5 };
+            byte[] array2 = new byte[] { 1, 2 };
+
+            byte[][] jaggedArray1 = new byte[3][] { array0, array1, array2 };
+
+
+            // Initialization of a jagged array v.2
+            byte[][] jaggedArray2 = new byte[3][];
+
+            jaggedArray2[0] = array0;
+            jaggedArray2[1] = array1;
+            jaggedArray2[2] = array2;
+
+
+            // Initialization of a jagged array v.3
+            byte[][] jaggedArray3 =
+                {
+                    new byte[] { 1, 2, 3 },
+                    new byte[] { 1, 2, 3, 4, 5 },
+                    new byte[] { 1, 2 }
+                };
         }
     }
 
