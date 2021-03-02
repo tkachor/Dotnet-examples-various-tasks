@@ -5,7 +5,7 @@ namespace Arithmetic
 {
     class Program
     {
-        // Factorial with a cycle for
+        // Iterative Factorial 
         static BigInteger Factorial(BigInteger number)
         {
             BigInteger result = 1;
@@ -18,7 +18,7 @@ namespace Arithmetic
             return result;
         }
 
-        // Factorial with a recursion
+        // Recursion Factorial 
         static BigInteger FactorialRecursion(BigInteger number)
         {
             if (number == 0 || number == 1)
@@ -32,11 +32,42 @@ namespace Arithmetic
 
         }
 
+        // Iterative Fibonacci  
+        static int Fibonacci(int number)
+        {
+            if (number == 0) return 0;
+
+            int prev = 0;
+            int next = 1;
+            for (int i = 1; i < number; i++)
+            {
+                int sum = prev + next;
+                prev = next;
+                next = sum;
+            }
+            return next;
+        }
+
+        // Recursion Fibonacci  
+        static int FibonacciRecursion(int number)
+        {
+            if (number < 2)
+            {
+                return number;
+            }
+            else
+            {
+                return FibonacciRecursion(number - 1) + FibonacciRecursion(number - 2);                
+            }
+        }
+
+        
+
 
 
         static void Main(string[] args)
         {
-            Console.WriteLine(Factorial(10000));
+            Console.WriteLine(FibonacciRecursion(15));
         }
     }
 }
