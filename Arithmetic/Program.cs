@@ -61,6 +61,19 @@ namespace Arithmetic
             }
         }
 
+        // 
+
+        static ulong Power(uint x, uint n)
+        {
+            ulong res = 1;
+            for (uint i = 0; i < n; i++)
+                res *= x;
+            return res;
+        }
+
+        //
+
+        double resultPow = Math.Pow(2, 2);
         
 
 
