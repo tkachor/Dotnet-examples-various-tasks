@@ -61,8 +61,7 @@ namespace Arithmetic
             }
         }
 
-        // 
-
+        //Raise the number to the power
         static ulong Power(uint x, uint n)
         {
             ulong res = 1;
@@ -71,8 +70,7 @@ namespace Arithmetic
             return res;
         }
 
-        //
-
+        //Raise the number to the power with Math
         double resultPow = Math.Pow(2, 2);
         
 
@@ -80,7 +78,7 @@ namespace Arithmetic
 
         static void Main(string[] args)
         {
-            Console.WriteLine(FibonacciRecursion(15));
+           
         }
     }
 }
