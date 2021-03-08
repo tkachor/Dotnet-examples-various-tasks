@@ -94,6 +94,18 @@ namespace Arithmetic
             return result;  
         }
 
+        //Is Even number
+        static bool IsEvenNumber(int number)
+        {
+            return number % 2 == 0;
+        }
+
+        //Is Odd number
+        static bool IsOddNumber(int number)
+        {
+            return number % 2 != 0;
+        }
+
 
 
         static void Main(string[] args)
