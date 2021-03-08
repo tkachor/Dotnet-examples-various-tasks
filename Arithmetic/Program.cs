@@ -74,6 +74,26 @@ namespace Arithmetic
         double resultPow = Math.Pow(2, 2);
         
 
+        //Is Prime number
+        static bool IsPrimeNumber(int number)
+        {
+            bool result = true;
+
+            if(number > 1)
+            {
+                for (int i = 2; i < number; i++)
+                {
+                    if (number % i == 0)
+                    {
+                        result = false;
+                        break;
+                    }
+                }
+            }
+
+            return result;  
+        }
+
 
 
         static void Main(string[] args)
