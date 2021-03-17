@@ -123,6 +123,39 @@ namespace Arrays
             return list.ToArray();
         }
 
+        //Break the number into numbers and return it to an array v.1
+        static int[] NumberToArray(int number)
+        {
+            int lengthArray = number.ToString().Length;
+
+            int[] arrayNumber = new int[lengthArray];
+
+            for(int i = 0; i < lengthArray; i++)
+            {
+                foreach(var item in number.ToString())
+                {
+                    arrayNumber[i] = int.Parse(item.ToString());
+                }
+            }
+
+            return arrayNumber;
+        }
+
+        //Break the number into numbers and return it to an array v.2
+        static int[] NumberToArrayV2(int number)
+        {
+            List<int> listNumbers = new List<int>();
+
+            foreach(char item in number.ToString())
+            {
+                listNumbers.Add(int.Parse(item.ToString()));
+            }
+
+            return listNumbers.ToArray();
+        }
+
+
+
 
 
     }
