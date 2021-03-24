@@ -142,7 +142,7 @@ namespace Arrays
         }
 
         //Break the number into numbers and return it to an array v.2
-        static int[] NumberToArrayV2(int number)
+        static int[] NumberToArrayVariantList(int number)
         {
             List<int> listNumbers = new List<int>();
 
@@ -152,6 +152,31 @@ namespace Arrays
             }
 
             return listNumbers.ToArray();
+        }
+
+        //Array inversion with loop   
+        static int[] InversionIntegerArray(int[] array)
+        {
+            int length = array.Length;
+            int midle = length / 2;
+            int temp;
+            for (int i = 0; i < midle; i++)
+            {
+                temp = array[i];
+                array[i] = array[length - i - 1];
+                array[length - i - 1] = temp;
+            }
+
+            return array;
+        }
+
+        //Array inversion with list
+        static int[] InversionIntegerArrayWithList(int[] array)
+        {
+            List<int> list =  array.ToList();
+            list.Reverse();
+
+            return list.ToArray();
         }
 
 
