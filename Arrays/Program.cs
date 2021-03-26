@@ -78,7 +78,7 @@ namespace Arrays
 
     public static class ArraysTask
     {
-        // Add Element ToArray with method CopyTo
+        // Add element to array with method CopyTo
         public static T[] AddElementToArrayCopyTo<T>(this T[] array, T item)
         {
             if (array == null)
@@ -91,7 +91,7 @@ namespace Arrays
             return result;
         }
 
-        // Add Element ToArray with Linq method Concat
+        // Add element to array with Linq method Concat
         public static T[] AddElementToArrayConcat<T>(this T[] array, T item)
         {
             if (array == null)
@@ -101,7 +101,7 @@ namespace Arrays
             return array.Concat(new T[] { item }).ToArray();
         }
 
-        // Add Element ToArray with methot Resize
+        // Add element to array with methot Resize
         public static T[] AddElementToArrayResize<T>(this T[] array, T item)
         {
             if(array == null)
@@ -114,7 +114,7 @@ namespace Arrays
             return array;
         }
 
-        // Add Element ToArray with convert to List
+        // Add element to array with convert to list
         public static T[] Append<T>(this T[] array, T item)
         {
             List<T> list = new List<T>(array);
@@ -154,7 +154,7 @@ namespace Arrays
             return listNumbers.ToArray();
         }
 
-        //Array inversion with loop   
+        //Integer array inversion with loop   
         static int[] InversionIntegerArray(int[] array)
         {
             int length = array.Length;
@@ -170,15 +170,90 @@ namespace Arrays
             return array;
         }
 
-        //Array inversion with list
+        //Integer array inversion with linq
         static int[] InversionIntegerArrayWithList(int[] array)
         {
-            List<int> list =  array.ToList();
-            list.Reverse();
+            Array.Reverse(array);
 
-            return list.ToArray();
+            return array;
         }
 
+        //Integer array sort with loop
+        static int[] ArraySort(int[] array)
+        {
+            int temp = 0;
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                for (int j = 0; j < array.Length; j++)
+                {
+                    if (array[i] > array[j])
+                    {
+                        temp = array[i];
+                        array[i] = array[j];
+                        array[j] = temp;
+                    }
+                }
+            }
+
+            return array;
+        }
+
+        //Integer array sort with linq
+        static int[] ArraySortLinq(int[] array)
+        {
+            Array.Sort(array);
+
+            return array;
+        }
+
+        //Max and min value in snteger array
+        static int MinValueInArray(int[] array) 
+        {
+            int Lowest = array[0];
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (Lowest > array[i])
+                {
+                    Lowest = array[i];
+                }
+            }
+            return Lowest;
+        }
+
+        static int MaxValueInArray(int[] array)
+        {
+            int Highest = array[0];
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (Highest < array[i])
+                {
+                    Highest = array[i];
+                }
+            }
+            return Highest;
+        }
+
+        //Max and min value in integer array with linq
+        static int MinValueInArrayLinq(int[] array)
+        {            
+            return array.Max();
+        }
+
+        static int MaxValueInArrayLinq(int[] array)
+        {           
+            return array.Min();
+        }
+
+        //Index of Max and min value in integer array with linq
+        static int IndexOfMinValueInArray(int[] array)
+        {
+            return array.ToList().IndexOf(array.Max());
+        }
+
+        static int IndexOfMaxValueInArray(int[] array)
+        {
+            return array.ToList().IndexOf(array.Min());
+        }
 
 
 

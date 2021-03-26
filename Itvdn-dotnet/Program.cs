@@ -33,24 +33,28 @@ namespace Itvdn_dotnet
             return list.ToArray();
         }
 
-        static void Main(string[] args) 
+        // Array Sort 
+        static int[] ArraySort(int[] array)
         {
-            int[] arr = new int[] { 1, 2, 3, 4, 5, 6, 89, 3 };
-
-
-            foreach (var item in InversionIntegerArray(arr))
+            int temp = 0;
+            for (int i = 0; i < array.Length - 1; i++)
             {
-                Console.Write(item);
+                for (int j = 0; j < array.Length; j++)
+                {
+                    if (array[i] > array[j])
+                    {
+                        temp = array[i];
+                        array[i] = array[j];
+                        array[j] = temp;
+                    }                    
+                }
             }
 
-            Console.WriteLine();
+            return array;
+        }
 
-            foreach (var item in InversionIntegerArrayWithList(arr))
-            {
-                Console.Write(item);
-            }
-
-         
+        static void Main(string[] args) 
+        {         
            
         }         
        
