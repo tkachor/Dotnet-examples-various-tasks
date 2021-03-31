@@ -140,8 +140,8 @@ namespace Arrays
 
             return arrayNumber;
         }
-
-        //Break the number into numbers and return it to an array v.2
+        
+        //Divide the number into numbers and return it to an array v.2
         static int[] NumberToArrayVariantList(int number)
         {
             List<int> listNumbers = new List<int>();

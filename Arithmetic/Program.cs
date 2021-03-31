@@ -106,6 +106,19 @@ namespace Arithmetic
             return number % 2 != 0;
         }
 
+        //Divide the number into numbers and return their sum
+        static int SumOfNumbers(int number)
+        {
+            int result = 0;
+
+            foreach (char c in number.ToString())
+            {
+                result += int.Parse(c.ToString());
+            }
+
+            return result;
+        }
+
 
 
         static void Main(string[] args)
