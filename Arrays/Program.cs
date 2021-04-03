@@ -255,7 +255,46 @@ namespace Arrays
             return array.ToList().IndexOf(array.Min());
         }
 
+        //Сombine two arrays with Linq method Concat
+        static int[] ConcatTwoArray(int[] arr1, int[] arr2)
+        {
+            int[] result = arr1.Concat(arr2).ToArray();
 
+            return result;
+        }
+
+        //Сombine two arrays with Linq method Union without duplicates
+        static int[] UnionTwoArray(int[] arr1, int[] arr2)
+        {
+            int[] result = arr1.Union(arr2).ToArray();
+
+            return result;
+        }
+
+        //Сombine two arrays with Linq method CopyTo
+        static int[] СombineTwoArray(int[] arr1, int[] arr2)
+        {
+            int[] result = new int[arr1.Length + arr2.Length];
+            arr1.CopyTo(result, 0);
+            arr2.CopyTo(result, arr1.Length);
+
+            return result;
+        }
+
+        //Сombine many arrays with Linq method SelectMany and params without duplicates 
+        private static T[] Combine<T>(params IEnumerable<T>[] items) =>
+                    items.SelectMany(i => i).Distinct().ToArray();
+
+        //Сombine two arrays with List
+        static int[] СombineTwoArrayWithList(int[] arr1, int[] arr2)
+        {
+            var result = new List<int>();
+            result.AddRange(arr1);
+            result.AddRange(arr2);
+
+            return result.ToArray();
+        }
+       
 
 
     }

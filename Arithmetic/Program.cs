@@ -135,52 +135,10 @@ namespace Arithmetic
             return 0;
         }
 
-        //Сombine two arrays with Linq method Concat
-        static int[] ConcatTwoArray(int[] arr1, int[] arr2)
-        {
-            int[] result = arr1.Concat(arr2).ToArray();
-
-            return result;
-        }
-
-        //Сombine two arrays with Linq method Union without duplicates
-        static int[] UnionTwoArray(int[] arr1, int[] arr2)
-        {
-            int[] result = arr1.Union(arr2).ToArray();
-
-            return result;
-        }
-
-        //Сombine two arrays with Linq method CopyTo
-        static int[] СombineTwoArray(int[] arr1, int[] arr2)
-        {
-            int[] result = new int[arr1.Length + arr2.Length];
-            arr1.CopyTo(result, 0);
-            arr2.CopyTo(result, arr1.Length);
-
-            return result;
-        }
-
-        //Сombine two arrays with Linq method SelectMany and params
-        private static T[] Combine<T>(params IEnumerable<T>[] items) =>
-                    items.SelectMany(i => i).ToArray();
-
-
-
 
         static void Main(string[] args)
         {
-            int[] arr1 = new int[] { 2, 4, 6, 45, 78, 3, 4, 65 };
-            int[] arr2 = new int[] { 43, 4, 7, 8, 32, 223, 54 };
-
-            var result = Combine(arr1, arr2, arr1);
-
-            foreach (var item in result)
-            {
-                Console.WriteLine(item);
-            }
-
-
+        
         }
     }
 }
