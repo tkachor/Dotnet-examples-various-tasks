@@ -121,38 +121,7 @@ namespace Arrays
             list.Add(item);
 
             return list.ToArray();
-        }
-
-        //Break the number into numbers and return it to an array v.1
-        static int[] NumberToArray(int number)
-        {
-            int lengthArray = number.ToString().Length;
-
-            int[] arrayNumber = new int[lengthArray];
-
-            for(int i = 0; i < lengthArray; i++)
-            {
-                foreach(var item in number.ToString())
-                {
-                    arrayNumber[i] = int.Parse(item.ToString());
-                }
-            }
-
-            return arrayNumber;
-        }
-        
-        //Divide the number into numbers and return it to an array v.2
-        static int[] NumberToArrayVariantList(int number)
-        {
-            List<int> listNumbers = new List<int>();
-
-            foreach(char item in number.ToString())
-            {
-                listNumbers.Add(int.Parse(item.ToString()));
-            }
-
-            return listNumbers.ToArray();
-        }
+        }        
 
         //Integer array inversion with loop   
         static int[] InversionIntegerArray(int[] array)
@@ -282,8 +251,13 @@ namespace Arrays
         }
 
         //Сombine many arrays with Linq method SelectMany and params without duplicates 
-        private static T[] Combine<T>(params IEnumerable<T>[] items) =>
-                    items.SelectMany(i => i).Distinct().ToArray();
+        private static T[] Combine<T>(params IEnumerable<T>[] items)
+        {
+            return items.SelectMany(i => i)
+                        .Distinct()
+                        .ToArray();
+        }
+                    
 
         //Сombine two arrays with List
         static int[] СombineTwoArrayWithList(int[] arr1, int[] arr2)
@@ -294,8 +268,64 @@ namespace Arrays
 
             return result.ToArray();
         }
-       
 
+        //Divide the number into digits and return it to an array loop variant
+        static int[] NumberToArrayOfDigits(int number)
+        {
+            int lengthArray = number.ToString().Length;
+
+            int[] digits = new int[lengthArray];
+
+            for (int i = 0; i < lengthArray; i++)
+            {
+                foreach (var item in number.ToString())
+                {
+                    digits[i] = int.Parse(item.ToString());
+                }
+            }
+
+            return digits;
+        }
+
+        //Divide the number into digits and return it to an array variant wih list
+        static int[] NumberToArrayOfDigits2(int number)
+        {
+            var digits = new List<int>();
+
+            if (number == 0)
+                return new int[1] { 0 };
+
+            foreach (char item in number.ToString())
+            {
+                digits.Add(int.Parse(item.ToString()));
+            }
+
+            return digits.ToArray();
+        }
+
+        //Divide the number into digits and return it to an reverse array 
+        static int[] NumberToArrayOfDigits3(int number)
+        {
+            var digits = new List<int>();
+
+            if (number == 0)
+                return new int[1] { 0 };
+
+            for (; number != 0; number /= 10)
+                digits.Add(number % 10);
+
+            return digits.ToArray();           
+        }
+
+        //Divide the number into digits and return it to an reverse array with Linq
+        static int[] NumberToArrayOfDigitsLinq(int number)
+        {
+            return number.ToString()
+                         .Reverse()
+                         .Select(n => Convert.ToInt32(n.ToString()))
+                         .ToArray();
+        }
+            
 
     }
 }
