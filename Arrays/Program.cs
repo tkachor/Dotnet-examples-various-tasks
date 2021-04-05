@@ -31,19 +31,19 @@ namespace Arrays
             int[,,] integerArray6 = new int[3, 2, 3]
            {
                 {
-                    { 1, 2, 3 },                   
+                    { 1, 2, 3 },
                     { 7, 8, 9 }
                 },
                 {
-                    { 1, 2, 3 },                   
+                    { 1, 2, 3 },
                     { 7, 8, 9 }
                 },
                 {
-                    { 1, 2, 3 },                  
+                    { 1, 2, 3 },
                     { 7, 8, 9 }
                 }
            };
-            
+
             for (int i = 0; i < integerArray6.GetLength(0); i++)
                 for (int j = 0; j < integerArray6.GetLength(1); j++)
                     for (int k = 0; k < integerArray6.GetLength(2); k++)
@@ -104,7 +104,7 @@ namespace Arrays
         // Add element to array with methot Resize
         public static T[] AddElementToArrayResize<T>(this T[] array, T item)
         {
-            if(array == null)
+            if (array == null)
             {
                 return new T[] { item };
             }
@@ -121,7 +121,40 @@ namespace Arrays
             list.Add(item);
 
             return list.ToArray();
-        }        
+        }
+
+        //Remove element of an array with linq
+        static int[] RemoveElemetOfAnArray(this int[] array, int element)
+        {
+            return array.Where(val => val != element)
+                        .ToArray();
+        }
+
+        //Remove element of an array with linq, just the first instance
+        static int[] RemoveElemetOfAnArrayFirstInstance(this int[] array, int element)
+        {
+            int numIndex = Array.IndexOf(array, element);
+
+            return array.Where((val, idx) => idx != numIndex)
+                        .ToArray();
+        }
+
+        //Remove element of an array with linq Except method
+        static int[] RemoveElemetOfAnArrayWithExcept(this int[] array, int element)
+        {
+            return array.Except(new int[] { element })
+                        .ToArray();
+        }
+
+        //Remove element of an array with list
+        static int[] RemoveElemetOfAnArrayWithList(this int[] array, int element)
+        {
+            List<int> numbersList = array.ToList();
+
+            numbersList.Remove(element);
+
+            return numbersList.ToArray();
+        }
 
         //Integer array inversion with loop   
         static int[] InversionIntegerArray(int[] array)
@@ -176,7 +209,7 @@ namespace Arrays
         }
 
         //Max and min value in snteger array
-        static int MinValueInArray(int[] array) 
+        static int MinValueInArray(int[] array)
         {
             int Lowest = array[0];
             for (int i = 0; i < array.Length; i++)
@@ -204,12 +237,12 @@ namespace Arrays
 
         //Max and min value in integer array with linq
         static int MinValueInArrayLinq(int[] array)
-        {            
+        {
             return array.Max();
         }
 
         static int MaxValueInArrayLinq(int[] array)
-        {           
+        {
             return array.Min();
         }
 
@@ -257,7 +290,7 @@ namespace Arrays
                         .Distinct()
                         .ToArray();
         }
-                    
+
 
         //Сombine two arrays with List
         static int[] СombineTwoArrayWithList(int[] arr1, int[] arr2)
@@ -314,10 +347,10 @@ namespace Arrays
             for (; number != 0; number /= 10)
                 digits.Add(number % 10);
 
-            return digits.ToArray();           
+            return digits.ToArray();
         }
 
-        //Divide the number into digits and return it to an reverse array with Linq
+        //Divide the number into digits and return it to an reverse array with linq
         static int[] NumberToArrayOfDigitsLinq(int number)
         {
             return number.ToString()
@@ -325,7 +358,6 @@ namespace Arrays
                          .Select(n => Convert.ToInt32(n.ToString()))
                          .ToArray();
         }
-            
 
     }
 }
