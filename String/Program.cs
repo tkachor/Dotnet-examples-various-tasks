@@ -86,7 +86,20 @@ namespace String
            
             Console.WriteLine("\x0048\x0065\x006c\x006c\x006f\x0020\x0057\x006f\x0072\x006c\x0064\x0021");
 
-           
+            // Divide the string into an array of words with one separator
+            static string[] DivideTheString(string str)
+            {
+                return str.Split(' ');
+            }
+
+            // Divide the string into an array of words with many separators
+            static string[] StringToArray(string str)
+            {
+                char[] delimiterChars = { ' ', ',', '.', ':', '\t' };
+
+                return str.Split(delimiterChars);
+            }
+
         }
     }
 }
