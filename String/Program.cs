@@ -100,6 +100,18 @@ namespace String
                 return str.Split(delimiterChars);
             }
 
+            // Сombine a string array into one string
+            static string CombineString(string[] arrayOfString)
+            {
+                string newString = "";
+
+                for (int i = 0; i < arrayOfString.Length; i++)
+                {
+                    newString += arrayOfString[i] + " ";
+                }
+
+                return newString;
+            }
         }
     }
 }
