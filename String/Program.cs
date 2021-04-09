@@ -112,6 +112,40 @@ namespace String
 
                 return newString;
             }
+
+            // Сount the number of words in the text
+            static int CountOfWords(string text)
+            {
+                char[] delimiterChars = { ' ', ',', '.', ':', '\t' };
+
+                int counterWords = 0;
+
+                foreach (var item in text.Split(delimiterChars))
+                {
+                    counterWords++;
+                }
+
+                return counterWords;
+            }
+
+            // Сount the number of one words in the text
+            static int CountOfOneWords(string text, string searchWord)
+            {
+                int counterWords = 0;
+                foreach (var item in text.ToLower())
+                {
+                    if (text.Contains(searchWord))
+                    {
+                        counterWords++;
+                    }
+                }
+
+                return counterWords;
+            }
+
+
         }
+
+       
     }
 }
