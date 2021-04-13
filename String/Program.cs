@@ -142,8 +142,28 @@ namespace String
                 return counterWords;
             }
 
+            // Counting letters in a text
+            static int CountLetters(string text)
+            {             
+                return text.ToCharArray().Length;
+            }
+
+            // Counting a specific letters in a text
+            static int CountSpecificLetters(string text, char searchChar)
+            {
+                int counterChars = 0;
+                foreach (var item in text.ToLower().ToCharArray())
+                {
+                    if (item == searchChar)
+                    {
+                        counterChars++;
+                    }
+                }
+                return counterChars;
+            }
+
         }
 
-       
+
     }
 }
