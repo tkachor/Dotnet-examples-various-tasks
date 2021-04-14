@@ -92,6 +92,12 @@ namespace String
                 return str.Split(' ');
             }
 
+            //Remove spaces from the beginning and end of the line
+            string source2 = "   I'm wider than I need to be.  ";
+            var trimmedResult = source2.Trim();
+            var trimLeading = source2.TrimStart();
+            var trimTrailing = source2.TrimEnd();
+
             // Divide the string into an array of words with many separators
             static string[] StringToArray(string str)
             {
@@ -161,6 +167,8 @@ namespace String
                 }
                 return counterChars;
             }
+
+            
 
         }
 
