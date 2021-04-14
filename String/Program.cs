@@ -90,13 +90,34 @@ namespace String
             static string[] DivideTheString(string str)
             {
                 return str.Split(' ');
-            }
+            }           
 
-            //Remove spaces from the beginning and end of the line
-            string source2 = "   I'm wider than I need to be.  ";
-            var trimmedResult = source2.Trim();
-            var trimLeading = source2.TrimStart();
-            var trimTrailing = source2.TrimEnd();
+            // Remove spaces from the beginning and end of the line
+            string source = "   I'm wider than I need to be.  ";
+            var trimmedResult = source.Trim();
+            var trimLeading = source.TrimStart();
+            var trimTrailing = source.TrimEnd();
+
+            // Replace the selected word or character in a string
+            var replacement = source.Replace("need", "wont");
+            var replacemantChar = source.Replace(' ', '_');
+
+            // How many words begin or end with the same letter
+            static int numberOfStartLetters(string str, char ch)
+            {
+                int counter = 0;
+
+                string[] strArray = str.Split(' ');
+
+                foreach (var s in strArray)
+                {
+                    if (s.ToLower().StartsWith(ch.ToString())) ; // or EndsWith() 
+                    {
+                        counter++;
+                    }
+                }
+                return counter;
+            }
 
             // Divide the string into an array of words with many separators
             static string[] StringToArray(string str)
