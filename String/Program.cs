@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace String
 {
@@ -59,7 +60,7 @@ namespace String
             Console.WriteLine("Peeter say: \"Hay\"."); // Double quotation mark
             Console.WriteLine(@"Peeter say: ""Hay"".");
 
-            Console.WriteLine("C:\\Windows\\notepad.exe"); 
+            Console.WriteLine("C:\\Windows\\notepad.exe");
             Console.WriteLine(@"C:\Windows\notepad.exe");
 
             Console.WriteLine("Hello world!\0"); // Zero-termination string
@@ -67,7 +68,7 @@ namespace String
             Console.WriteLine("\a");           // Alert 
 
             Console.Write("Backspace\b");      // Return one position
-            Console.WriteLine("!");           
+            Console.WriteLine("!");
 
             Console.Write("Hello\n");          // Enter
 
@@ -79,18 +80,18 @@ namespace String
 
 
             // ASCII 
-                           
+
             Console.WriteLine("\x48\x65\x6c\x6c\x6f\x20\x57\x6f\x72\x6c\x64\x21");
 
             // Unicode
-           
+
             Console.WriteLine("\x0048\x0065\x006c\x006c\x006f\x0020\x0057\x006f\x0072\x006c\x0064\x0021");
 
             // Divide the string into an array of words with one separator
             static string[] DivideTheString(string str)
             {
                 return str.Split(' ');
-            }           
+            }
 
             // Remove spaces from the beginning and end of the line
             string source = "   I'm wider than I need to be.  ";
@@ -118,6 +119,14 @@ namespace String
                 }
                 return counter;
             }
+
+
+            // How many words begin or end with the same letter with linq
+            static int numberOfStartLettersLinq(string str, char ch)
+            {
+                return str.Split(' ').Where(n => ((n.StartsWith(ch) || (n.StartsWith(ch))))).Count();
+            }
+
 
             // Divide the string into an array of words with many separators
             static string[] StringToArray(string str)
@@ -171,7 +180,7 @@ namespace String
 
             // Counting letters in a text
             static int CountLetters(string text)
-            {             
+            {
                 return text.ToCharArray().Length;
             }
 
@@ -189,10 +198,9 @@ namespace String
                 return counterChars;
             }
 
-            
-
         }
-
 
     }
 }
+
+
