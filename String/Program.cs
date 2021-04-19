@@ -120,6 +120,20 @@ namespace String
                 return counter;
             }
 
+            //Is the word palindrome
+            static bool IsPalindron(string str)
+            {
+                int length = str.Length;
+
+                for (int i = 0; i < length / 2; i++)
+                {
+                    if (str[i] != str[length - i - 1])
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
 
             // How many words begin or end with the same letter with linq
             static int numberOfStartLettersLinq(string str, char ch)
