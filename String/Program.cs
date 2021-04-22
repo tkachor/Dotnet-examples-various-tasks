@@ -212,6 +212,15 @@ namespace String
                 return counterChars;
             }
 
+            //Find the longest sequence of numbers in the text
+            static int LongestSequenceOfNumbers(string str)
+            {
+                int result = 0;
+                int.TryParse(string.Join("", str.Where(c => char.IsDigit(c))), out result);
+
+                return result;
+            }
+
         }
 
     }
