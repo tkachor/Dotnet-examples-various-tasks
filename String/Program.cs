@@ -221,6 +221,25 @@ namespace String
                 return result;
             }
 
+            //Remove the first letters of all words from the text
+            static string RemoveTheFirstLetters(string text)
+            {
+                string result = "";
+
+                foreach (string item in text.Split(' '))
+                {
+                    result = result + " " + item.Substring(1);
+                }
+
+                return result;
+            }
+
+            //Delete all repeating words from the line
+            static string DeleteAllRepeating(string text)
+            {
+                return text.Split(' ').Distinct().ToString();
+            }
+
         }
 
     }
