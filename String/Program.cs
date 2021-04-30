@@ -240,6 +240,29 @@ namespace String
                 return text.Split(' ').Distinct().ToString();
             }
 
+            //Compare string with Revers string
+            static bool CompareStrWithReversStr(string str1, string str2)
+            {
+                char[] str2Revers = str2.ToCharArray();
+                Array.Reverse(str2Revers);
+                str2 = new string(str2Revers);
+
+                return str1 == str2;
+            }
+
+            //Convert text to an abbreviation
+            static string ConvertToAbbreviation(string text)
+            {
+                var textArray = text.ToUpper().Split(' ');
+                return textArray[0].Substring(0, 1) + "." + textArray[1].Substring(0, 1);
+            }
+
+            //Convert text to an abbreviation with Linq
+            static string ConvertToAbbreviationLinq(string text)
+            {
+                return string.Join(".", text.Split(' ').Select(w => w[0])).ToUpper();
+            }
+
         }
 
     }
