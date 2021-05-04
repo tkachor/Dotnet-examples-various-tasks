@@ -263,6 +263,19 @@ namespace String
                 return string.Join(".", text.Split(' ').Select(w => w[0])).ToUpper();
             }
 
+            //Find the text between two strings
+            static string TextBetweenTwoString(string text, string openTag, string closeTag)
+            {
+                int openingPosition = text.IndexOf(openTag);
+                int closingPosition = text.IndexOf(closeTag);
+
+                openingPosition += openTag.Length;
+
+                int length = closingPosition - openingPosition;
+
+                return text.Substring(openingPosition, length);
+            }
+
         }
 
     }
