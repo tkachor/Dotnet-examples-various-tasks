@@ -276,6 +276,22 @@ namespace String
                 return text.Substring(openingPosition, length);
             }
 
+            //Find the text between which in the last parentheses
+            static string TextBetweenLastParentheses(string text)
+            {
+                int openingPosition = text.IndexOf('(');
+                openingPosition++;
+                int closingPosition = text.IndexOf(')');
+
+                return text.Substring(openingPosition, closingPosition - openingPosition);
+            }
+
+            //Replace String in Text
+            static string ReplaceString(string text, string replaceText, string pasteText)
+            {
+                return text.Replace(replaceText, pasteText);
+            }
+
         }
 
     }
