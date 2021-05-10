@@ -292,6 +292,11 @@ namespace String
                 return text.Replace(replaceText, pasteText);
             }
 
+            //Remove String in Text
+            static string RmoveString(string text, int startIndex, int endIndex)
+            {
+                return text.Remove(startIndex, endIndex);
+            }
         }
 
     }
