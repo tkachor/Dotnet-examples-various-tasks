@@ -297,6 +297,12 @@ namespace String
             {
                 return text.Remove(startIndex, endIndex);
             }
+
+            //Combine two strings without repeating characters and sorting
+            static string CombineTwoString(string s1, string s2)
+            {
+                return new string(s1.Union(s2).OrderBy(i => i).ToArray());
+            }
         }
 
     }
