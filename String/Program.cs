@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace String
 {
@@ -302,6 +303,21 @@ namespace String
             static string CombineTwoString(string s1, string s2)
             {
                 return new string(s1.Union(s2).OrderBy(i => i).ToArray());
+            }
+
+            //Smash all the thong characters through a comma (Method Join)
+            static string CharactersThroughAComa(string text)
+            {
+                char[] charArray = text.ToCharArray();
+
+                string result = "";
+
+                foreach (var item in charArray)
+                {
+                    result += item + ", ";                  
+                }               
+
+                return result;
             }
         }
 
