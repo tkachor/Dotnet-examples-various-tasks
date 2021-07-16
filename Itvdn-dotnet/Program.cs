@@ -5,29 +5,29 @@ using System.Numerics;
 
 namespace Itvdn_dotnet
 {   
+    class Auto
+    {
+        public string Name = "Clio";
+
+        public void  PrintName()
+        {
+            Console.WriteLine(Name);
+        }
+
+
+    }
     
     class Program
-    {
-
-        static int CountOfWords(string text)
-        {
-            int counterWords = 0;
-
-            foreach (var item in text.Split(' '))
-            {
-                counterWords++;
-            }
-
-            return counterWords;
-
-        }
+    {        
 
         static void Main(string[] args) 
         {
+            Auto auto1 = new Auto();
 
-            string str = "Tesds dsadas sadsa, sdsad";
+            auto1.Name = "Infinity";
 
-            Console.WriteLine(CountOfWords(str));
+            auto1.PrintName();
+            
            
         }         
        
