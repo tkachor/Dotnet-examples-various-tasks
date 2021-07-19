@@ -6,7 +6,7 @@ namespace Classes
 
     class Auto
     {
-        // variant_1
+        // Variant_1
         private string brandCar = null;
 
         public void SetBrandCar(string value)
@@ -19,7 +19,7 @@ namespace Classes
             return brandCar;
         }
 
-        // variant_2
+        // Variant_2
         private string modelCar = null;
 
         public string ModelCar
@@ -35,7 +35,7 @@ namespace Classes
             }
         }
 
-        // variant_3
+        // Variant_3
         private int numberOfDoorsInCar = 0;
 
         public int NumberOfDoorsInCar
@@ -54,8 +54,49 @@ namespace Classes
             }
         }
 
-        // variant_4
+        // Variant_4
         public int YearOfManufacture { get; set; }
+
+        // Variant_5
+        private int numberOfWheels = 4;
+
+        public int NumberOfWheels
+        {
+            get
+            {
+                return numberOfWheels;
+            }
+        }
+
+        // Variant_6
+        private string fuel = "";
+
+        public string Fuel
+        {
+            set
+            {
+                fuel = value;
+            }
+        }
+        
+
+        //Constructors
+
+        public Auto(){}
+
+        public Auto(string brandCar, string modelCar, int numberOfDoorsInCar)
+        {
+            this.brandCar = brandCar;
+            this.modelCar = modelCar;
+            this.numberOfDoorsInCar = numberOfDoorsInCar;
+        }
+
+        public Auto(int YearOfManufacture)
+            : this("Renault", "Clio", 5)
+        {
+            this.YearOfManufacture = YearOfManufacture;
+        }
+        
 
     }
 
@@ -67,6 +108,7 @@ namespace Classes
     {
         static void Main(string[] args)
         {
+            T
            
         }
     }
