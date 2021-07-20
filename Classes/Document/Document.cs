@@ -4,7 +4,7 @@ using System;
 
 namespace Classes.Document
 {
-    class Document
+    public class Document
     {
         Title title = null;
         Body body = null;
