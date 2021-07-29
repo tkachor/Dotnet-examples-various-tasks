@@ -17,8 +17,6 @@ namespace Classes.Readonly
         public int Age { get; set; }
         readonly DateTime data;
 
-
-
         public User(string login, string name, string surname, int age)
         {
             Login = login;
