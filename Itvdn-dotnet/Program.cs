@@ -5,31 +5,20 @@ using System.Numerics;
 
 namespace Itvdn_dotnet
 {   
-    class Auto
+    
+    
+    class Program
     {
-        public string Name = "Clio";
 
-        public void  PrintName()
-        {
-            Console.WriteLine(Name);
+        static void Main(){
+
+
+           
+
         }
 
 
-    }
-    
-    class Program
-    {        
 
-        static void Main(string[] args) 
-        {
-            Auto auto1 = new Auto();
 
-            auto1.Name = "Infinity";
-
-            auto1.PrintName();
-            
-           
-        }         
-       
     }
 }
