@@ -108,6 +108,20 @@ namespace Arithmetic
             return number % 2 != 0;
         }
 
+        //Reverse a Number
+        static int ReverseNumber(int number)
+        {
+            int result = 0;
+
+            while (number != 0)
+            {
+                result = (result * 10) + (number % 10);
+                number = number / 10;
+            }
+
+            return result;
+        }
+
         //Divide the number into numbers and return their sum
         static int SumOfNumbers(int number)
         {
@@ -140,7 +154,9 @@ namespace Arithmetic
 
         static void Main(string[] args)
         {
-        
+            Console.WriteLine(ReverseNumber(23456)); 
+
+
         }
     }
 }
