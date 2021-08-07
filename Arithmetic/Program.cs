@@ -122,6 +122,29 @@ namespace Arithmetic
             return result;
         }
 
+        //Is a Duck Number
+        static bool IsADuckNumber(int number)
+        {
+            string strNumbr = Convert.ToString(number);
+            int numberLength = strNumbr.Length;
+            int temp = 0;
+            char ch;
+
+            for (int i = 1; i < numberLength; i++)
+            {
+                ch = strNumbr[i];
+                if (ch == '0')
+                    temp++;     
+            }
+
+            char f = strNumbr[0];
+
+            if (temp > 0 && f != '0')
+                return true;
+            else
+                return false;
+        }
+
         //Divide the number into numbers and return their sum
         static int SumOfNumbers(int number)
         {
@@ -154,8 +177,8 @@ namespace Arithmetic
 
         static void Main(string[] args)
         {
-            Console.WriteLine(ReverseNumber(23456)); 
 
+            Console.WriteLine(IsADuckNumber(4304));
 
         }
     }
