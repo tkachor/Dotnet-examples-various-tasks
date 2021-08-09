@@ -178,7 +178,7 @@ namespace Arithmetic
         static void Main(string[] args)
         {
 
-            Console.WriteLine(IsADuckNumber(4304));
+           
 
         }
     }

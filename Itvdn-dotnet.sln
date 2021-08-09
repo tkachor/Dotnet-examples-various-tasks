@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tuple", "Tuple\Tuple.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "File", "File\File.csproj", "{6DB271B3-DB0F-4D11-A307-3C6A2FA0CF9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Classes", "Classes\Classes.csproj", "{3BB5EFEA-6B98-432C-B47C-D90D3446766C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Classes", "Classes\Classes.csproj", "{3BB5EFEA-6B98-432C-B47C-D90D3446766C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formula", "Formula\Formula.csproj", "{5AAA6D4E-0325-480E-9B35-1FEFA5407C87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{3BB5EFEA-6B98-432C-B47C-D90D3446766C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BB5EFEA-6B98-432C-B47C-D90D3446766C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BB5EFEA-6B98-432C-B47C-D90D3446766C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AAA6D4E-0325-480E-9B35-1FEFA5407C87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AAA6D4E-0325-480E-9B35-1FEFA5407C87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AAA6D4E-0325-480E-9B35-1FEFA5407C87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AAA6D4E-0325-480E-9B35-1FEFA5407C87}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
