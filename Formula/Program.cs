@@ -38,6 +38,15 @@ namespace Formula
             return 1.8 * celsius +32;
         }
 
+        static void ConvertSecondsToTime(int seconds)
+        {
+            int second = seconds % 60;
+            int minutes = (seconds / 60) % 60;
+            int hours = (seconds / 60) / 60;
+
+            Console.WriteLine($"\nHours{hours} Minutes{minutes} Second{second}");
+        }
+
 
 
 

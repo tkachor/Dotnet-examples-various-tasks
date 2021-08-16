@@ -122,6 +122,13 @@ namespace Arithmetic
             return result;
         }
 
+        //Random number
+        static int RandomNumber(int range)
+        {
+            Random random = new Random();            
+            return random.Next(range);
+        }
+
         //Is a Duck Number
         static bool IsADuckNumber(int number)
         {
@@ -178,7 +185,10 @@ namespace Arithmetic
         static void Main(string[] args)
         {
 
-           
+            for (int i = 0; i < 100; i++)
+            {
+                Console.WriteLine(RandomNumber(1000));
+            }
 
         }
     }
