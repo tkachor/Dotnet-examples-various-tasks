@@ -42,8 +42,32 @@ namespace SortingMethods
             }
         }
 
+        //SelectionSort
+        static void SelectionSort(int[] array)
+        {
+            int pos_min, temp;
 
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                pos_min = i;
+                for (int j = i + 1; j < array.Length; j++)
+                {
+                    if (array[j] < array[pos_min])
+                    {
+                        pos_min = j;
+                    }
+                }
 
+                if (pos_min != i)
+                {
+                    temp = array[i];
+                    array[i] = array[pos_min];
+                    array[pos_min] = temp;
+
+                }
+               
+            }
+        }
 
         static void Main(string[] args)
         {
@@ -56,8 +80,9 @@ namespace SortingMethods
                 Console.WriteLine(array[i]);
             }
 
-            InsertionSort(array);
             //BubbleSortInteger(array);
+            //InsertionSort(array);
+            SelectionSort(array);
 
             Console.WriteLine("-------------------");
 
