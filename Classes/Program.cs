@@ -82,7 +82,6 @@ namespace Classes
         
 
         //Constructors
-
         public Auto(){}
 
         public Auto(string brandCar, string modelCar, int numberOfDoorsInCar)
@@ -97,8 +96,6 @@ namespace Classes
         {
             this.YearOfManufacture = YearOfManufacture;
         }
-        
-
     }
 
 

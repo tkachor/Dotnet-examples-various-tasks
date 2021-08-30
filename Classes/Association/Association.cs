@@ -22,12 +22,6 @@ namespace Classes.Association
 
     class Association
     {
-        static void Main()
-        {
-            Factory factory = new Factory();
-
-            Product product = factory.FactoryMethod();
-
-        }
+        
     }
 }

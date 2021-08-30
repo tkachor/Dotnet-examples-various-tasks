@@ -2,8 +2,6 @@
 
 namespace Enum
 { 
-
-
     class Program
     {
         enum Operation
