@@ -2,8 +2,7 @@
 using Classes.Readonly;
 
 namespace Classes
-{
-    // Properties
+{   // Properties
 
     class Auto
     {
@@ -103,6 +102,9 @@ namespace Classes
     {
         static void Main(string[] args)
         {
+
+           
+
            
            
         }

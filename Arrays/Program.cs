@@ -359,5 +359,14 @@ namespace Arrays
                          .ToArray();
         }
 
+        // Sum of elements odd positions (access to array indexes via linq)
+        public static double EvaluateSumOfElementsOddPositions(double[] inputData)
+        {
+            return inputData.Select((element, index) => new { index, element })
+                            .Where(n => n.index % 2 != 0)
+                            .Select(n => n.element)
+                            .Sum();
+        }
+
     }
 }

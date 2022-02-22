@@ -25,7 +25,6 @@ namespace List
             return result;
         }
 
-
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");

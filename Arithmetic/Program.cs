@@ -19,6 +19,7 @@ namespace Arithmetic
 
             return result;
         }
+       
 
         // Recursion Factorial 
         static BigInteger FactorialRecursion(BigInteger number)
@@ -183,8 +184,10 @@ namespace Arithmetic
 
 
         static void Main(string[] args)
-        {          
-
+        {
+            long l = 43254;
+            string str = l.ToString();
+            Console.WriteLine(str);
         }
     }
 }
