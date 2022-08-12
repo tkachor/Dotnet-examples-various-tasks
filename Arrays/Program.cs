@@ -130,7 +130,7 @@ namespace Arrays
                         .ToArray();
         }
 
-        //Remove element of an array with linq, just the first instance
+        //Remove element of an array with linq for index
         static int[] RemoveElemetOfAnArrayFirstInstance(this int[] array, int element)
         {
             int numIndex = Array.IndexOf(array, element);
@@ -172,7 +172,7 @@ namespace Arrays
             return array;
         }
 
-        //Integer array inversion with linq
+        //Integer array inversion with Array Class
         static int[] InversionIntegerArrayWithList(int[] array)
         {
             Array.Reverse(array);
@@ -200,7 +200,7 @@ namespace Arrays
             return array;
         }
 
-        //Integer array sort with linq
+        //Integer array sort with Array Class
         static int[] ArraySortLinq(int[] array)
         {
             Array.Sort(array);
@@ -208,7 +208,7 @@ namespace Arrays
             return array;
         }
 
-        //Max and min value in snteger array
+        //Max and min value in integer array
         static int MinValueInArray(int[] array)
         {
             int Lowest = array[0];

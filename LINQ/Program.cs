@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Numerics;
 
@@ -169,6 +170,26 @@ namespace Itvdn_dotnet
             teenStudentsName.ToList().ForEach(s => Console.WriteLine(s.StudentName));
 
             //https://dotnettutorials.net/lesson/linq-aggregate-method/
+
+            //------------------------------------------------------------------- 
+            //Upper every  first letter in string 
+
+            static string ToJadenCase(string phrase)
+            {
+                return String.Join(" ", phrase.Split().Select(i => Char.ToUpper(i[0]) + i.Substring(1)));
+            }
+
+            static string ToJadenCaseSimpl( string phrase)
+            {
+                return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(phrase);
+            }
+
+            //Sum of two smallest numbers in array
+            static int sumTwoSmallestNumbers(int[] n) => n.OrderBy(i => i).Take(2).Sum();
+
+
+
+
         }
 
     }

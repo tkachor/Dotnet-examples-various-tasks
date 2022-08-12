@@ -319,6 +319,27 @@ namespace String
 
                 return result;
             }
+
+            // Rever all word in string
+            static string ReverseAllWords(string str)
+            {
+                string result = "";
+
+                string[] arrString = str.Split(' ');
+
+                for (int i = 0; i < arrString.Length; i++)
+                {
+                    result += new string(arrString[i].Reverse().ToArray()) + " ";
+                }
+
+                return result.TrimEnd();
+            }
+
+            // Rever all word in string Linq
+            static string ReverseAllWordsLinq(string str)
+            {
+                return string.Join(" ", str.Split(' ').Select(i => new string(i.Reverse().ToArray())));
+            }
         }
 
     }
