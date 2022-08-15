@@ -46,11 +46,6 @@ namespace Formula
 
             Console.WriteLine($"\nHours{hours} Minutes{minutes} Second{second}");
         }
-
-
-
-
-
         static void Main(string[] args)
         {
             Console.WriteLine(AreaOfCircle(23));

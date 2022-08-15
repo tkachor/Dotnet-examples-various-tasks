@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Numerics;
+using System.Reflection;
 
 namespace Itvdn_dotnet
 {
@@ -168,10 +169,10 @@ namespace Itvdn_dotnet
                                    select new { StudentName = s.StudentName };
 
             teenStudentsName.ToList().ForEach(s => Console.WriteLine(s.StudentName));
-
-            //https://dotnettutorials.net/lesson/linq-aggregate-method/
+           
 
             //------------------------------------------------------------------- 
+
             //Upper every  first letter in string 
 
             static string ToJadenCase(string phrase)
@@ -184,11 +185,22 @@ namespace Itvdn_dotnet
                 return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(phrase);
             }
 
+
             //Sum of two smallest numbers in array
             static int sumTwoSmallestNumbers(int[] n) => n.OrderBy(i => i).Take(2).Sum();
 
 
 
+            //Splits the string into pairs of two characters. If the string contains an odd number
+            //of characters then it should replace the missing second character of the final
+            //pair with an underscore('_').
+
+            static string[] Solution(string s)
+            {
+                return Enumerable.Range(0, (s.Length + 1) / 2)
+                                 .Select(i => s[i * 2] + ((i * 2 + 1 < s.Length) ? s[i * 2 + 1].ToString() : "_"))
+                                 .ToArray();
+            }
 
         }
 

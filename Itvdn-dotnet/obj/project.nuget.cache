@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FbMgBCqxY6DH7oP345iBt6frUxzCL5flJQJebPHN8CLPd6BDZz2fcKug60YwUg1vktAtaLEBS/c1EfDsCicEbA==",
+  "dgSpecHash": "zyVjR4DfTGVkiTNDh4zG9ck2fmIwg3uD5i7ZEvTpTnAOPLfS+8k2CppNnDxPrXsA2TZrq9BwQ4gcExwu/Zn7RQ==",
   "success": true,
-  "projectFilePath": "C:\\Repos\\Itvdn-dotnet\\Itvdn-dotnet\\Itvdn-dotnet.csproj",
+  "projectFilePath": "C:\\Repos\\Examples-task-dotnet\\Itvdn-dotnet\\Itvdn-dotnet.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
