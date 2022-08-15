@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Numerics;
 using System.Text.RegularExpressions;
 
 namespace String
@@ -339,6 +340,19 @@ namespace String
             static string ReverseAllWordsLinq(string str)
             {
                 return string.Join(" ", str.Split(' ').Select(i => new string(i.Reverse().ToArray())));
+}
+
+            //(6 kyu - https://www.codewars.com/) A function that accepts an array of 10 integers(between 0 and 9), 
+            // that returns a string of those numbers in the form of a phone number.
+            static string CreatePhoneNumberV1(int[] numbers)
+            {
+                return string.Format("{0:(###) ###-####}", Convert.ToInt64(string.Join("", numbers)));
+            }
+
+            static string CreatePhoneNumberV2(int[] numbers)
+            {
+                string phoneNumber = string.Join("", numbers);
+                return $"({phoneNumber[0..3]}) {phoneNumber[3..6]}-{phoneNumber[6..10]}";
             }
         }
 
