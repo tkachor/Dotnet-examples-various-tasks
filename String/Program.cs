@@ -343,7 +343,7 @@ namespace String
 }
 
             //(6 kyu - https://www.codewars.com/) A function that accepts an array of 10 integers(between 0 and 9), 
-            // that returns a string of those numbers in the form of a phone number.
+            // Returns a string of those numbers in the form of a phone number.
             static string CreatePhoneNumberV1(int[] numbers)
             {
                 return string.Format("{0:(###) ###-####}", Convert.ToInt64(string.Join("", numbers)));
@@ -354,6 +354,12 @@ namespace String
                 string phoneNumber = string.Join("", numbers);
                 return $"({phoneNumber[0..3]}) {phoneNumber[3..6]}-{phoneNumber[6..10]}";
             }
+
+            //(7 kyu - https://www.codewars.com/)
+            //Determines whether a string that contains only letters is an isogram
+            static bool IsIsogram(string str) => str.Where(char.IsLetter).GroupBy(char.ToLower).All(s => s.Count() < 2);
+
+            static bool IsIsogramShort(string str) => str.ToLower().Distinct().Count() == str.Length;
         }
 
     }
