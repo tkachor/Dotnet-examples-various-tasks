@@ -13,46 +13,16 @@ namespace Itvdn_dotnet
 
     class Program
     {
-        enum Color
-        {
-            Red,
-            Blue,
-            Grean
-        }
+
+        static int[] MultiplyAll(int[] arr, int numberr) => arr.Select(x => x * numberr).ToArray();
 
 
         static void Main()
         {
-            Console.WriteLine("Main Starts");
-            // создаем задачу
-            Task task1 = new Task(() =>
+            foreach (var item in MultiplyAll(new int[] { 1, 2, 3 }, 2)) 
             {
-                Console.WriteLine("Task - 1 Starts");
-                Thread.Sleep(1000);
-                Console.WriteLine("Task - 1 Ends");
-            });
-
-            Task task2 = new Task(() =>
-            {
-                Console.WriteLine("Task - 2 Starts");
-                Thread.Sleep(1000);
-                Console.WriteLine("Task - 2 Ends");
-            });
-
-            Task task3 = new Task(() =>
-            {
-                Console.WriteLine("Task - 3 Starts");
-                Thread.Sleep(1000);
-                Console.WriteLine("Task - 3 Ends");
-            });
-
-
-            task1.RunSynchronously();
-            task2.RunSynchronously();
-            task3.RunSynchronously();
-        
-            Console.WriteLine("Main Ends"); // этот вызов ждет завершения задачи task1 
-
+                Console.WriteLine(item);
+            }
         }
     }
 }
