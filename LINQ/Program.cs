@@ -187,6 +187,7 @@ namespace Itvdn_dotnet
 
 
             //Sum of two smallest numbers in array
+
             static int sumTwoSmallestNumbers(int[] n) => n.OrderBy(i => i).Take(2).Sum();
 
 
@@ -201,6 +202,13 @@ namespace Itvdn_dotnet
                                  .Select(i => s[i * 2] + ((i * 2 + 1 < s.Length) ? s[i * 2 + 1].ToString() : "_"))
                                  .ToArray();
             }
+
+
+            //(7 kyu - https://www.codewars.com/)
+            //This function must return another function, which takes a single integer as an argument and returns a new array.
+            //The returned array should consist of each of the elements from the first array multiplied by the integer.
+
+            static Func<int, int[]> MultiplyAll(int[] arr) => (number) => { return arr.Select(x => x * number).ToArray(); };
 
         }
 
