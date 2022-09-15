@@ -180,6 +180,22 @@ namespace Arithmetic
             return 0;
         }
 
+        // //(6 kyu - https://www.codewars.com/)
+        //If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+        public static int Solution(int value)
+        {
+            List<int> list = new List<int>();
+
+            for (int i = 1; i < value; i++)
+            {
+                if (i % 3 == 0 || i % 5 == 0)
+                {
+                    list.Add(i);
+                }
+            }
+
+            return value <= 0 ? 0 : list.Distinct().Aggregate((a, b) => a + b);
+        }
 
 
 

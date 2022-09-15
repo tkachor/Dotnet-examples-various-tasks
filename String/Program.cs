@@ -360,6 +360,12 @@ namespace String
             static bool IsIsogram(string str) => str.Where(char.IsLetter).GroupBy(char.ToLower).All(s => s.Count() < 2);
 
             static bool IsIsogramShort(string str) => str.ToLower().Distinct().Count() == str.Length;
+
+            //(7 kyu - https://www.codewars.com/)
+            //Given a string str, reverse it and omit all non-alphabetic characters.
+            string ReverseLetter(string str) => new string(Regex.Replace(str, "[^A-Za-z]", "").ToCharArray().Reverse().ToArray());
+
+
         }
 
     }
