@@ -12,11 +12,16 @@ using System.Threading.Tasks;
 namespace Itvdn_dotnet
 {
     class Program
-    {        
+    {
+
+        public static string ReverseLetter(string str) => new string(Regex.Replace(str, "[^A-Za-z]", "").ToCharArray().Reverse().ToArray());
+
 
         static void Main()
         {
-          
+            Console.WriteLine(ReverseLetter("ul43543543!!!!!!tr53o?n"));
+           
+;
         }
     }
 }
