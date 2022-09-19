@@ -210,6 +210,9 @@ namespace Itvdn_dotnet
 
             static Func<int, int[]> MultiplyAll(int[] arr) => (number) => { return arr.Select(x => x * number).ToArray(); };
 
+
+
+
         }
 
     }

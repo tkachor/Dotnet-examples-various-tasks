@@ -368,5 +368,9 @@ namespace Arrays
                             .Sum();
         }
 
+        ////(7 kyu - https://www.codewars.com/)
+        //The Stanton measure of an array is computed as follows: count the number of occurences for value 1 in the array. Let this count be n. The Stanton measure is the number of times that n appears in the array.
+        public static int StantonMeasure(int[] arr) => arr.Count(s => s == arr.Count(i => i == 1));
+
     }
 }
