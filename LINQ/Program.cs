@@ -210,7 +210,9 @@ namespace Itvdn_dotnet
 
             static Func<int, int[]> MultiplyAll(int[] arr) => (number) => { return arr.Select(x => x * number).ToArray(); };
 
-
+            //(7 kyu - https://www.codewars.com/)
+            //A Tidy number is a number whose digits are in non-decreasing order.
+            static bool TidyNumber(int n) => $"{n}" == string.Concat($"{n}".OrderBy(c => c));
 
 
         }

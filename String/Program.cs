@@ -365,6 +365,9 @@ namespace String
             //Given a string str, reverse it and omit all non-alphabetic characters.
             string ReverseLetter(string str) => new string(Regex.Replace(str, "[^A-Za-z]", "").ToCharArray().Reverse().ToArray());
 
+            //(7 kyu - https://www.codewars.com/)
+            //I will give you an integer. Give me back a shape that is as long and wide as the integer. The integer will be a whole number between 1 and 50.
+            static string GenerateShape(int n) => string.Join("\n", Enumerable.Repeat(new string('+', n), n));
 
         }
 
