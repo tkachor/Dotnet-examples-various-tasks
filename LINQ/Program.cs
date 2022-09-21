@@ -187,7 +187,6 @@ namespace Itvdn_dotnet
 
 
             //Sum of two smallest numbers in array
-
             static int sumTwoSmallestNumbers(int[] n) => n.OrderBy(i => i).Take(2).Sum();
 
 
@@ -195,7 +194,6 @@ namespace Itvdn_dotnet
             //(6 kyu - https://www.codewars.com/) Splits the string into pairs of two characters. If the string contains an odd number
             //of characters then it should replace the missing second character of the final
             //pair with an underscore('_').
-
             static string[] Solution(string s)
             {
                 return Enumerable.Range(0, (s.Length + 1) / 2)
@@ -207,13 +205,17 @@ namespace Itvdn_dotnet
             //(7 kyu - https://www.codewars.com/)
             //This function must return another function, which takes a single integer as an argument and returns a new array.
             //The returned array should consist of each of the elements from the first array multiplied by the integer.
-
             static Func<int, int[]> MultiplyAll(int[] arr) => (number) => { return arr.Select(x => x * number).ToArray(); };
+
 
             //(7 kyu - https://www.codewars.com/)
             //A Tidy number is a number whose digits are in non-decreasing order.
             static bool TidyNumber(int n) => $"{n}" == string.Concat($"{n}".OrderBy(c => c));
 
+
+            //(7 kyu - https://www.codewars.com/)
+            //For the given sequence of houses determine the sum that the boy will get. It is guaranteed that there will always be at least one 0 house on the path.            
+            static int HouseNumbersSum(int[] inputArray) => inputArray.TakeWhile(x => x != 0).Sum();
 
         }
 
