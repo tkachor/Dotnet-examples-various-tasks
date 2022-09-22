@@ -369,6 +369,11 @@ namespace String
             //I will give you an integer. Give me back a shape that is as long and wide as the integer. The integer will be a whole number between 1 and 50.
             static string GenerateShape(int n) => string.Join("\n", Enumerable.Repeat(new string('+', n), n));
 
+            //(7 kyu - https://www.codewars.com/)
+            //Given a string, replace every letter with its position in the alphabet. If anything in the text isn't a letter, ignore it and don't return it.
+            static string AlphabetPosition(string text) => string.Join(" ", text.ToLower().Where(char.IsLetter).Select(x => x - 'a' + 1));
+            
+
         }
 
     }
