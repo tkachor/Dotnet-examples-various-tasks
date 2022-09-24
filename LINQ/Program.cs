@@ -217,6 +217,12 @@ namespace Itvdn_dotnet
             //For the given sequence of houses determine the sum that the boy will get. It is guaranteed that there will always be at least one 0 house on the path.            
             static int HouseNumbersSum(int[] inputArray) => inputArray.TakeWhile(x => x != 0).Sum();
 
+
+            //Calculate Square Of Sum function https://exercism.org/
+            static int CalculateSquareOfSum(int max) => (int)Math.Pow(Enumerable.Range(1, max).Sum(), 2);
+
+            static int CalculateSumOfSquares(int max) => Enumerable.Range(1, max).Select(x => (int)Math.Pow(x, 2)).Sum();
+
         }
 
     }
