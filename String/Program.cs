@@ -372,7 +372,14 @@ namespace String
             //(7 kyu - https://www.codewars.com/)
             //Given a string, replace every letter with its position in the alphabet. If anything in the text isn't a letter, ignore it and don't return it.
             static string AlphabetPosition(string text) => string.Join(" ", text.ToLower().Where(char.IsLetter).Select(x => x - 'a' + 1));
-            
+
+
+            //Tuple function https://exercism.org/
+            static (bool IsNewYork, bool IsFake, string LocalNumber) Analyze(string phoneNumber)
+            => (phoneNumber.StartsWith("212"), phoneNumber[4..7].Contains("555"), phoneNumber[8..12]);
+
+            static bool IsFake((bool IsNewYork, bool IsFake, string LocalNumber) phoneNumberInfo)
+                => phoneNumberInfo.Item2;
 
         }
 
