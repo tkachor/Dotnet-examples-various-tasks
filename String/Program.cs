@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace String
 {
-    class Program
+    static class Program
     {
         static void Main(string[] args)
         {
@@ -379,9 +379,22 @@ namespace String
             => (phoneNumber.StartsWith("212"), phoneNumber[4..7].Contains("555"), phoneNumber[8..12]);
 
             static bool IsFake((bool IsNewYork, bool IsFake, string LocalNumber) phoneNumberInfo)
-                => phoneNumberInfo.Item2;
+                => phoneNumberInfo.Item2;            
+
 
         }
+
+
+        //Extension string methods https://exercism.org/
+        static string SubstringAfter(this string str, string delimiter) =>
+          str.Substring(str.IndexOf(delimiter) + delimiter.Length);
+
+        static string SubstringBetween(this string str, string firstDel, string secondDel) =>
+                str.Substring(str.IndexOf(firstDel) + firstDel.Length, str.LastIndexOf(secondDel) - str.IndexOf(firstDel) - firstDel.Length);
+
+        static string Message(this string str) => str.SubstringAfter(":").Trim();
+
+        static string LogLevel(this string str) => str.SubstringBetween("[", "]");
 
     }
 }

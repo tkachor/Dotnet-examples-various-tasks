@@ -12,15 +12,18 @@ using System.Threading.Tasks;
 
 namespace Itvdn_dotnet
 {
+    public static class LogAnalysis
+    {     
+     
+    }
+
     class Program
-    {       
-
-      
+    { 
         static void Main()
-        {
+        {      
 
-           
-            
+         
+
         }
     }
 }
