@@ -223,6 +223,10 @@ namespace Itvdn_dotnet
 
             static int CalculateSumOfSquares(int max) => Enumerable.Range(1, max).Select(x => (int)Math.Pow(x, 2)).Sum();
 
+            //(7 kyu - https://www.codewars.com/)
+            //Calculate count the number of 1s in the binary representations of all the numbers in the array.
+            int RangeBitCount(int a, int b) =>
+            string.Join("", Enumerable.Range(a, b - a + 1).Select(x => Convert.ToString(x, 2))).Where(x => x == '1').Count();
         }
 
     }
