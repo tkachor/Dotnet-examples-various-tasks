@@ -379,7 +379,30 @@ namespace String
             => (phoneNumber.StartsWith("212"), phoneNumber[4..7].Contains("555"), phoneNumber[8..12]);
 
             static bool IsFake((bool IsNewYork, bool IsFake, string LocalNumber) phoneNumberInfo)
-                => phoneNumberInfo.Item2;            
+                => phoneNumberInfo.Item2;
+
+            //(6 kyu - https://www.codewars.com/)
+            //Converts dash/underscore delimited words into camel casing. The first word within the output should be capitalized only if the original word was capitalized
+            static string ToCamelCase(string str)
+            {
+                var strArr = str.Split('-', '_');
+
+                for (int i = 1; i < strArr.Length; i++)
+                {
+                    char replacement = Char.ToUpper(strArr[i].ToCharArray()[0]);
+
+                    strArr[i] = string.Concat(replacement, strArr[i].Substring(1));
+                }
+
+                return string.Join("", strArr);
+            }
+
+            static string ToCamelCaseV1(string str) => Regex.Replace(str, @"[_-](\w)", m => m.Groups[1].Value.ToUpper());
+
+            static string ToCamelCaseV2(string str) => string.Concat(str.Split('-', '_').Select((s, i) => i > 0 ? char.ToUpper(s[0]) + s.Substring(1) : s));
+
+
+
 
 
         }

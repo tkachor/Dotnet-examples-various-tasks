@@ -372,5 +372,68 @@ namespace Arrays
         //The Stanton measure of an array is computed as follows: count the number of occurences for value 1 in the array. Let this count be n. The Stanton measure is the number of times that n appears in the array.
         public static int StantonMeasure(int[] arr) => arr.Count(s => s == arr.Count(i => i == 1));
 
+        // Test task of one of the companies. Fill the matrix with a rhombus of zeros and 1,2,3,4 on its sides. 
+        // PrintRhombusInMatrix(5) =>
+        // 11022
+        // 10002
+        // 00000
+        // 30004
+        // 33044
+        public static void PrintRhombusInMatrix(int size)
+        {
+            int[,] matrix = new int[size, size];
+
+            int midSize = size / 2;
+
+            for (int i = 0; i < size; i++)
+            {
+                if (i < midSize)
+                {
+                    for (int j = 0; j < size; j++)
+                    {
+                        if (j < midSize + i && j < midSize - i)
+                        {
+                            matrix[i, j] = 1;
+                        }
+                        else if (j > midSize + i && j > midSize - i)
+                        {
+                            matrix[i, j] = 2;
+                        }
+                        else
+                        {
+                            matrix[i, j] = 0;
+                        }
+                    }
+                }
+                else
+                {
+                    for (int j = 0; j < size; j++)
+                    {
+                        if (j <= midSize - (size - i) && j <= midSize + (size - i))
+                        {
+                            matrix[i, j] = 3;
+                        }
+                        else if (j >= midSize - (size - i) && j >= midSize + (size - i))
+                        {
+                            matrix[i, j] = 4;
+                        }
+                        else
+                        {
+                            matrix[i, j] = 0;
+                        }
+                    }
+                }
+            }
+
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = 0; j < size; j++)
+                {
+                    Console.Write(matrix[i, j]);
+                }
+                Console.WriteLine();
+            }
+        }
+
     }
 }
