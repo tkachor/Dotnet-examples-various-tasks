@@ -15,9 +15,26 @@ namespace Itvdn_dotnet
 {
     class Program
     {
+        public static string DuplicateEncode(string word)
+        {
+            var charArr = word.ToLower().ToCharArray();
+            
+            char[] result = new char[charArr.Length];
+
+            for (int i = 0; i < charArr.Length; i++)
+            {
+                result[i] = (Array.LastIndexOf(charArr, charArr[i]) != Array.IndexOf(charArr, charArr[i])) ? ')' : '(';                
+            }
+
+            return String.Join("", result);
+        }
+
+      
+
         static void Main()
         {
-
+            Console.WriteLine(DuplicateEncode("recede"));
+            
         }
     }
 }
