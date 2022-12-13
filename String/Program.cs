@@ -419,6 +419,28 @@ namespace String
 
         static string LogLevel(this string str) => str.SubstringBetween("[", "]");
 
+
+        //(6 kyu - https://www.codewars.com/)
+        //Convert a string to a new string where each character in the new string is "(" if that character appears only once in the original string, or ")"
+        public static string DuplicateEncode(string word)
+        {
+            var charArr = word.ToLower().ToCharArray();          
+
+            char[] result = new char[charArr.Length];
+
+            for (int i = 0; i < charArr.Length; i++)
+            {
+                result[i] = (Array.LastIndexOf(charArr, charArr[i]) != Array.IndexOf(charArr, charArr[i])) ? ')' : '(';
+            }
+
+            return string.Join("", result);
+        }
+
+        public static string DuplicateEncode1(string word)
+        {
+            return string.Concat(word.ToUpper().Select(x => word.ToUpper().Split(x).Length == 2 ? "(" : ")"));
+        }
+
     }
 }
 
